@@ -42,7 +42,10 @@
         });
 
         socket.on('connect', function(msg) {
-          var username = prompt('what is your username ? ');
+          var username = null;
+          while(username == null){
+             username = prompt('what is your username ? ');
+          }
           socket.emit('join',username);
         });
       });
